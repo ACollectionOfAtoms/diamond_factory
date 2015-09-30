@@ -117,7 +117,7 @@ body {
  */
 
 .cover {
-  padding: 0 20px;
+  padding: 0px 20px;
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -168,4 +168,15 @@ body {
   .cover-container {
     width: 700px;
   }
+}
+
+#owl-example{
+  padding: 0px; 
+}
+.inner.cover {
+  padding: 90px 90px 90px 120px;
+}
+
+#fb-icon {
+  opacity: 0.25;
 }

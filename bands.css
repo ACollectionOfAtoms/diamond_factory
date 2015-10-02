@@ -1,0 +1,13 @@
+.owl-carousel {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#b-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.lead, .soc-ico {
+    bottom: 0;
+}

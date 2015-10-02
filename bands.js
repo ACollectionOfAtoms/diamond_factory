@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#owl-example").owlCarousel({
+    $("#band-covers").owlCarousel({
         singleItem: true,
     });
 });

@@ -9,6 +9,8 @@
     height: auto;
 }
 
-#band-covers .img-responsive.b-cover {
-    margin: 15px;
+#band-covers .img-responsive.b-cover{
+}
+.cover {
+    padding: 0px;
 }

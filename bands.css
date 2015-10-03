@@ -3,11 +3,12 @@
   margin-left: auto;
   margin-right: auto;
 }
-#b-cover {
+#band-covers .img-responsive.b-cover img{
     display: block;
     width: 100%;
     height: auto;
 }
-.lead, .soc-ico {
-    bottom: 0;
+
+#band-covers .img-responsive.b-cover {
+    margin: 15px;
 }

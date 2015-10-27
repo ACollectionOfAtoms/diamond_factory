@@ -7,26 +7,21 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="d.f.r.s">
     <meta name="author" content="David Adam Hernandez">
-    <link rel="icon" href="img/dia.ico">
 
     <title>Recorded Bands</title>
 
+    <link rel="icon" href="img/dia.ico">
+    
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
     <link href="css/bands.css" rel="stylesheet">
-    <link rel="stylesheet" href="../owl-carousel/owl.theme.css">
-    <link rel="stylesheet" href="../owl-carousel/owl.carousel.css">
 
-    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -50,27 +45,42 @@
             </div>
           </div>
 
-          <div class="inner cover">
-            <div id="band-covers" class="owl-carousel">
-              <div><img class="img-responsive b-cover" src="http://www.brooklynvegan.com/img/tg/austin/music/20140217-hospitality-air-waves-modrag-red-7/4.jpg">
+          <div class="inner cover" ng-app="BandApp">
+
+              <div class="row">
+                <div class="span12">
+                    <!--Place Carousel Here-->
+                    <div ng-controller="MainController">
+                      <div style="height: 305px">
+                        <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+                          <uib-slide ng-repeat="band in slides.bands" active="band.active">
+                            <img ng-src="{{band.img}}" style="margin:auto;">
+                            <div class="carousel-caption">
+                              <h4>Slide {{$index}}</h4>
+                              <p>{{band.band_name}}</p>
+                            </div>
+                          </uib-slide>
+                        </uib-carousel>
+                      </div>
+                    </div>
+                    <!--<div ng-controller="MainController">
+                      <div style="height: 305px">
+                        <carousel interval="myInterval" no-wrap="noWrapSlides">
+                          <slide ng-repeat="band in slides" active="slide.active">
+                            <img ng-src="{{band.img" style="margin:auto;">
+                          </slide>
+                        </carousel>
+                      </div>
+                    </div>-->
+
+
+                </div>
               </div>
 
-              <div> <img class="img-responsive b-cover" src="http://brightonsource.co.uk/wp-content/uploads/2012/04/AncientVVisdom1.jpg">
-              </div>
-              <div> <img class="img-responsive b-cover" src="http://s0.limitedrun.com/images/1028308/wetlungs-mohawk2.jpg">
-              </div>
-              <div> Your Content </div>
-              <div> Your Content </div>
-              <div> Your Content </div>
-              <div> Your Content </div>
-              <div> Your Content </div>
-              <div> Your Content </div>
-              <div> Your Content </div>
-            </div>
-            
+            <!-- This row used to be outside of inner cover -->
             <div class="row">
               <div class="col-xs-6">
-                <h3 id="band-name">Modrag</h3>
+                <h3 id="band-name"> Band Name </h3>
               </div>
               <div class="col-xs-5" id="icon-group">
                       <img id="sc-icon" class="soc-ico" src="img/sc_ico.png">
@@ -78,8 +88,8 @@
                       <img id="fb-icon" class="soc-ico" src="img/fb_ico.png">
               </div>
             </div>
-          </div>
-                
+          </div>              
+
           <div class="mastfoot">
             <div class="inner">
               <p>Copyright @ Diamond Factory Recording Studio. All rights reserved.</p>
@@ -96,17 +106,24 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="//code.jquery.com/ui/1.8.24/jquery-ui.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link rel="stylesheet" href="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"> </script>
+    <script href="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"> </script>
 
-    <!--Angular and custom js-->
-    <script src="js/bands.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <!--Angular-Animate-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.min.js"></script>
+    <!--AngularUI-->
+    <script src="ui-bootstrap-tpls-0.14.2.min.js"></script>
+    
+    <!--Modules-->
+    <script src="js/app.js"></script>
 
-    <!--Owl Carousel-->
-    <script src="../owl-carousel/owl.carousel.js"></script>
+    <!--Controllers-->
+    <script src="js/controllers/MainController.js"></script>
+
+    <!--Services-->
+    <script src="js/services/bands.js"></script>
+
 
   </body>
 </html>

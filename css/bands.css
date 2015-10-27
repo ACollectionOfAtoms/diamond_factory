@@ -1,13 +1,3 @@
-.owl-carousel {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cover {
-    padding: 0px;
-}
-
 #band-name {
     text-align: center;
     margin: 0 auto;
@@ -15,4 +5,10 @@
 
 #icon-group {
     margin: auto;
+}
+
+#band-covers .band-cover img{
+    display: block;
+    width: 100%;
+    height: auto;
 }
